@@ -18,6 +18,9 @@ public class News {
         this.data = data;
     }
 
+    public News() {
+    }
+
     public String getId() {
         return id;
     }
