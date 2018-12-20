@@ -1,4 +1,4 @@
-package repository;
+package com.newssystem.server.NewsSystem.repository;
 
 import com.newssystem.server.NewsSystem.domain.Comment;
 import org.springframework.data.mongodb.repository.MongoRepository;
