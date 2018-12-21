@@ -10,7 +10,7 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 @Service
-public class CommentService implements ServiceInterface {
+public class CommentService implements ServiceInterface<Comment>, CustomInterfaceComment {
 
     public CommentRepository commentRepository;
 
@@ -23,6 +23,21 @@ public class CommentService implements ServiceInterface {
     public List getObj() {
         List<Comment> commentList = commentRepository.findAll();
         return convertToDTOs(commentList);
+    }
+
+    @Override
+    public Comment create(Comment obj) {
+        return null;
+    }
+
+    @Override
+    public Comment findById(String id) {
+        return null;
+    }
+
+    @Override
+    public Comment update(Comment obj) {
+        return null;
     }
 
     private List<Comment> convertToDTOs(List<Comment> models) {
@@ -40,17 +55,8 @@ public class CommentService implements ServiceInterface {
     }
 
     @Override
-    public Object create(Object obj) {
-        return null;
-    }
-
-    @Override
-    public Object findById(String id) {
-        return null;
-    }
-
-    @Override
-    public Object update(Object obj) {
-        return null;
+    public List<Comment> findByNewsId(String id) {
+        List<Comment> commentList = commentRepository.findByNewsId(id);
+        return convertToDTOs(commentList);
     }
 }
