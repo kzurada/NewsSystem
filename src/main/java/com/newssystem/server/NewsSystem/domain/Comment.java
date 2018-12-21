@@ -18,6 +18,9 @@ public class Comment {
         this.data = data;
     }
 
+    public Comment() {
+    }
+
     public String getId() {
         return id;
     }
